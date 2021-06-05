@@ -1,0 +1,143 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 10px;
+}
+
+
+/* hijos de  grid container*/
+.grid-container > * {
+    padding: 10px;
+    text-align: center;
+    border-width: 1px;
+    border-style: solid;
+    border-color: black;
+    border-radius: 12px;
+}
+
+.grid-container {
+    /*indicar que sera una maqueta grid*/
+    display: grid;
+    gap: 10px;
+    /*tamaño telefono*/
+    grid-template: 
+    "header" 60px
+    "introduccion" auto
+    "carrusel" 100px
+    "conocimiento" 50px
+    "diagnostico" 50px
+    "testimonios" 50px
+    "noticias" auto
+    "asociaciones" 100px
+    "footer" 60px;
+    ;
+}
+
+
+/*abarcar todo el largo de la página*/
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+}
+
+
+
+ /*Estilos a cada contenedor hijo*/
+.header_ {    
+    grid-area: header;
+    background-color: lightcoral;
+
+}
+
+.introduccion_ {    
+    grid-area: introduccion;
+    background-color: lightcoral;
+
+}
+
+.carrusel_ {
+    grid-area: carrusel;
+    background-color: lightgreen;
+}
+
+.conocimiento_ {
+    grid-area: conocimiento;
+    background-color: lightgoldenrodyellow;
+}
+
+.diagnostico_ {
+    grid-area: diagnostico;
+    background-color: lightsalmon;
+}
+
+.testimonios_ {
+    grid-area: testimonios;
+    background-color: lightslategrey;
+}
+
+.noticias_ {
+    grid-area: noticias;
+    background-color: lightgreen;
+}
+
+.asociaciones_ {
+    grid-area: asociaciones;
+    background-color: lightyellow;
+}
+
+.footer_ {
+    grid-area: footer;
+    background-color: lightskyblue;
+} 
+
+/*tamaño tablet*/
+@media (min-width: 600px) {
+    .grid-container {
+        /*grid-template-columns: 200px auto;
+        grid-template-rows: 100px, 50px, auto, 100px;
+ 
+        grid-template-areas: 
+        "header header header"
+        "carrusel carrusel carrusel"
+        "conocimiento diagnostico testimonios"
+        "noticias . asociaciones"
+        "footer footer footer"
+        ;*/
+        grid-template: 
+        "header header header" 60px
+        "introduccion introduccion introduccion" auto
+        "carrusel carrusel carrusel" 100px
+        "conocimiento diagnostico testimonios" 100px
+        "noticias asociaciones asociaciones" 200px
+        "footer footer footer" 60px / 
+        200px auto; 
+    }
+}
+
+
+/*tamaño laptop*/
+@media (min-width: 900px) {
+    .grid-container {
+        /*grid-template-columns: 200px auto;
+        grid-template-rows: 100px, 50px, auto, 100px;
+ 
+        grid-template-areas: 
+        "header header header"
+        "carrusel carrusel carrusel"
+        "conocimiento diagnostico testimonios"
+        "noticias . asociaciones"
+        "footer footer footer"
+        ;*/
+        grid-template: 
+        "header header header" 60px
+        "introduccion introduccion introduccion" auto
+        "carrusel carrusel carrusel" 100px
+        "conocimiento diagnostico testimonios" 100px
+        "noticias asociaciones asociaciones" 200px
+        "footer footer footer" 60px / 
+        auto auto 100px; 
+    }
+}
